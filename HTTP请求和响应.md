@@ -90,8 +90,10 @@ HTTP/1.1 200 OK---------------->>协议版本，状态码，状态码描述，�
 # PS
 ```
 URI、URL和URN之间的区别
-URI全名为Uniform Resource Indentifier（统一资源标识），用来唯一的标识一个资源，是一个通用的概念，URI由两个主要的子集URL和URN组成
+URI全名为Uniform Resource Indentifier（统一资源标识），用来唯一的标识一个资源，
+是一个通用的概念，URI由两个主要的子集URL和URN组成
 URL全名为Uniform Resource Locator（统一资源定位），通过描述资源的位置来标识资源
-URN全名为Uniform Resource Name（统一资源命名），通过资源的名字来标识资源，与其所处的位置无关，这样即使资源的位置发生变动，其URN也不会变化
+URN全名为Uniform Resource Name（统一资源命名），通过资源的名字来标识资源，与其所处的位置无关，
+这样即使资源的位置发生变动，其URN也不会变化
 HTTP规范将更通用的概念URI作为其资源标识符，但是实际上，HTTP应用程序处理的只是URI的URL子集
 ```
