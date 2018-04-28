@@ -53,7 +53,7 @@ Connection:Keep-Alive,保持连接，在HTTP 1.0中默认是关闭的，需要�
 可选部分，比如GET请求就没有请求正文
 
 ***
-#HTTP响应报文格式
+# HTTP响应报文格式
 ***
 ![HTTP响应报文格式](https://github.com/Harrdy2018/Graphic-Http/blob/master/HTTP%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F.png)
 ***
