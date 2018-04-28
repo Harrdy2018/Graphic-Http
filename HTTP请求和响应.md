@@ -9,7 +9,8 @@
 * 请求行
 ```
 由3部分组成，分别为：请求方法、URL（见备注1）以及协议版本，之间由空格分隔
-请求方法包括GET、HEAD、PUT、POST、TRACE、OPTIONS、DELETE以及扩展方法，当然并不是所有的服务器都实现了所有的方法，部分方法即便支持，处于安全性的考虑也是不可用的
+请求方法包括GET、HEAD、PUT、POST、TRACE、OPTIONS、DELETE以及扩展方法，
+当然并不是所有的服务器都实现了所有的方法，部分方法即便支持，处于安全性的考虑也是不可用的
 协议版本的格式为：HTTP/主版本号.次版本号，常用的有HTTP/1.0和HTTP/1.1
 ```
 
@@ -17,13 +18,21 @@
 ***
 ```
 请求头部为请求报文添加了一些附加信息，键值对构成,下面解释比较容易混淆的几个点：
-Content-Type：When sending data to the server, use this content type. Default is “application/x-www-form-urlencoded;
+Content-Type：When sending data to the server, 
+use this content type. Default is “application/x-www-form-urlencoded;
 
-Data-Type:The type of data that you’re expecting back from the server. If none is specified, jQuery will try to infer it based on the MIME type of the response (an XML MIME type will yield XML, in 1.4 JSON will yield a JavaScript object, in 1.4 script will execute the script, and anything else will be returned as a string).
+Data-Type:The type of data that you’re expecting back from the server. 
+If none is specified, 
+jQuery will try to infer it based on the MIME type of the response (an XML MIME type will yield XML,
+in 1.4 JSON will yield a JavaScript object,
+in 1.4 script will execute the script, and anything else will be returned as a string).
 
-Accept:accepts (default: depends on DataType) Type: PlainObject The content type sent in the request header that*** tells the server what kind of response it will accept in return.*
+Accept:accepts (default: depends on DataType) Type: 
+PlainObject The content type sent in the request header that
+tells the server what kind of response it will accept in return
 
-Connection:Keep-Alive,保持连接，在HTTP 1.0中默认是关闭的，需要自己设置；在HTTP1.1中是默认启用的，如果加入Connection:close,才关闭
+Connection:Keep-Alive,保持连接，在HTTP 1.0中默认是关闭的，需要自己设置；
+在HTTP1.1中是默认启用的，如果加入Connection:close,才关闭
 ```
 ***
 |请求头|说明|
