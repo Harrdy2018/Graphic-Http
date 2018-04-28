@@ -99,3 +99,35 @@ URN全名为Uniform Resource Name（统一资源命名），通过资源的名�
 这样即使资源的位置发生变动，其URN也不会变化
 HTTP规范将更通用的概念URI作为其资源标识符，但是实际上，HTTP应用程序处理的只是URI的URL子集
 ```
+
+***
+# 实例
+```python
+import urllib.request
+url="http://baidu.com/"
+head={'User-Agent':' Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'}
+req=urllib.request.Request(url,headers=head)
+print(req.header_items() )
+print(req.get_header('User-Agent'))
+print(req.has_header('User-Agent'))
+print(req.headers)
+print(req.type)
+print(req.data)
+print(req.host)
+print(req.get_method())
+print(req.origin_req_host )
+response=urllib.request.urlopen(req)
+print(response.info())
+print(response.getcode())
+print(response.geturl())
+```
+```
+要获得请求报文的具体信息，比如请求行、请求头等等，就要从Request对象入手，
+在以req=urllib.request.Request(url,headers=head)这种方式加入请求头的时候，
+req=urllib.request.Request(url,head)这样写总是报错，我也很无奈
+
+要获得服务器端响应报文的具体信息，比如响应行、响应头等，则以response=urllib.request.urlopen(req)对象入手
+
+重点解释geturl() — return the URL of the resource retrieved, commonly used to determine if a redirect was followed 
+这是python官方文档上的内容，返回取回资源的URL,通常用于确定是否有重定向，这句话真的很关键，以前都是胡乱用，根本不知道这句话的重要性！！！
+```
