@@ -8,7 +8,7 @@
 ***
 * 请求行
 ```
-由3部分组成，分别为：请求方法、URL（见备注1）以及协议版本，之间由空格分隔
+POST /translate_o?smartresult=dict&smartresult=rule HTTP/1.1----->>请求方法、URL以及协议版本，之间由空格分隔
 请求方法包括GET、HEAD、PUT、POST、TRACE、OPTIONS、DELETE以及扩展方法，
 当然并不是所有的服务器都实现了所有的方法，部分方法即便支持，处于安全性的考虑也是不可用的
 协议版本的格式为：HTTP/主版本号.次版本号，常用的有HTTP/1.0和HTTP/1.1
@@ -57,3 +57,41 @@ Connection:Keep-Alive,保持连接，在HTTP 1.0中默认是关闭的，需要�
 ***
 ![HTTP响应报文格式](https://github.com/Harrdy2018/Graphic-Http/blob/master/HTTP%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F.png)
 ***
+
+***
+* 状态行
+```
+HTTP/1.1 200 OK---------------->>协议版本，状态码，状态码描述，之间由空格分隔
+状态代码为3位数字，200~299的状态码表示成功，300~399的状态码指资源重定向，400~499的状态码指客户端请求出错，500~599的状态码指服务端出错（HTTP/1.1向协议中引入了信息性状态码，范围为100~199）
+这里列举几个常见的：
+```
+***
+|状态码|类别|原因短语|
+|:-----|:-----|:-----|
+|1XX|infomation(信息性状态码)|接受的请求正在处理|
+|2XX|success(成功状态码)|请求正常处理完毕|
+|3XX|Redirection(重定向状态码)|需要进行附加要求操作以完成请求|
+|4XX|Client Error(客户端错误状态码)|服务器无法处理请求|
+|5XX|Sever Error(服务端错误状态码)|服务端处理请求出错|
+
+***
+* 响应头部
+***
+|响应头头|说明|
+|:-----|:-----|
+|Server|服务器应用程序软件的名称和版本|
+|Date||
+|Content-Type|响应正文的类型(是图片还是二进制字符串)|
+|Content-Length|响应正文长度|
+|Content-Charset|响应正文使用的编码|
+|Content-Encoding|响应正文使用的数据压缩格式|
+|Content-Language|响应正文使用的语言|
+
+# PS
+```
+URI、URL和URN之间的区别
+URI全名为Uniform Resource Indentifier（统一资源标识），用来唯一的标识一个资源，是一个通用的概念，URI由两个主要的子集URL和URN组成
+URL全名为Uniform Resource Locator（统一资源定位），通过描述资源的位置来标识资源
+URN全名为Uniform Resource Name（统一资源命名），通过资源的名字来标识资源，与其所处的位置无关，这样即使资源的位置发生变动，其URN也不会变化
+HTTP规范将更通用的概念URI作为其资源标识符，但是实际上，HTTP应用程序处理的只是URI的URL子集
+```
